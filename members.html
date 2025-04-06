@@ -1,893 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Generations</title>
+    <link rel="stylesheet" href="member.css">
+    <script>
+      let autoScrollEnabled = true;
+      let autoScrollInterval;
+      
+      function scrollToGeneration(id) {
+          autoScrollEnabled = false; 
+          document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => autoScrollEnabled = true, 10000); 
+      }
+      
+      function startAutoScroll() {
+          const generations = ['gen-1', 'gen-2', 'gen-3', 'gen-4'];
+          let index = 0;
 
-  <title>KITS ELITE - Members</title>
-  <meta content="" name="descriptison">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.jpg" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+          autoScrollInterval = setInterval(() => {
+              if (autoScrollEnabled) {
+                  document.getElementById(generations[index]).scrollIntoView({ behavior: 'smooth' });
+                  index = (index + 1) % generations.length;
+              }
+          }, 5000);
+      }
+      
+     
+  </script>
 </head>
-
 <body>
+    <body id="top">
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
     <div class="container">
-      <div class="logo float-left">
-        <img src="assets/img/logo/logo.png" alt="">
-      </div>
-
-      <nav class="nav-menu float-right d-none d-lg-block">
-        <ul>
-          <li><a href='/'>Home</a></li>
-          <li><a href='/about'>About Us</a></li>
-          <li class="active"><a href='/members'>Members</a></li>
-          <li><a href='/events'>Events</a></li>
-          <li><a href='/achievements'>Achievements</a></li>
-          <li><a href='/team'>Faculty</a></li>
-          <li><a href='/projects'>Projects</a></li>
-          <li><a href='/contact'>Contact Us</a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
-    </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-
-    <!-- ======= Our team Section ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Our team members</h2>
-          <ol>
-            <li><a href='/'>Home</a></li>
-            <li>Our team</li>
-          </ol>
-        </div>
-      </div>
-    </section><!-- End Our team Section -->
-
-    <!-- ======= Team Members Section ======= -->
-    <section class="services">
-      <div class="container">
-        <div class="section-title">
-          <h2>Our Team</h2>
-        </div>
-
+        
+        <h1>Elite Generations</h1>
         <div class="generation-buttons">
-          <button class="btn" onclick="toggleGeneration('gen1')">1st Generation</button>
-          <button class="btn" onclick="toggleGeneration('gen2')">2nd Generation</button>
-          <button class="btn" onclick="toggleGeneration('gen3')">3rd Generation</button>
-          <button class="btn" onclick="toggleGeneration('gen4')">4th Generation</button>
-      </div>
-      
-        <!-- Generation Coordinator Data -->
-        <div id="gen1" class="generation-data">
-          <h3>1st Generation Coordinators</h3>
-        </br>
-          <div class="row">
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up">
-              <div class="team-member">
-                <div class="circular-box">
-                  <img src="assets/GEN-1/PRESIDENT1.png" alt="">
-                </div>
-                <div class="member-info">
-                  <h4>K. Venkata Vishnu</h4>
-                  <p>President</p>
-                  <span>20JR1A4347</span>
-                </div>
-              </div>
-            </div>  
+            <button onclick="scrollToGeneration('gen-1')">Generation 1</button>
+            <button onclick="scrollToGeneration('gen-2')">Generation 2</button>
+            <button onclick="scrollToGeneration('gen-3')">Generation 3</button>
+            <button onclick="scrollToGeneration('gen-4')">Generation 4</button>
+        </div>
+        
+        
+        <div id="gen-1" class="generation">
+            <h2>Generation 1</h2>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-1/PRESIDENT1.png' alt='Member 1'><h3>K.venkata Vishnu</h3><p>Role: President</p><p>Roll No: 20JR1A4347</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-1/SECRETARY1.png' alt='Member 2'><h3>G. Lakshmi Sahitya</h3><p>Role: Secretary</p><p>Roll No: 20JR1A4310</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-1/MEDIA1.png' alt='Member 3'><h3>K. Raju Mithra</h3><p>Role: Media</p><p>Roll No: 20JR1A4346</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-1/TECHNICAL1.png' alt='Member 4'><h3>D. Gangothri</h3><p>Role: Technical head</p><p>Roll No: 20J1A4306</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-1/EVENT_ORGANIZER%201.png' alt='Member 5'><h3>U. Chandana</h3><p>Role: Event Organiser</p><p>Roll No: 20J1A4329</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-1/EVENT%20ORGANIZER1.png' alt='Member 5'><h3>K. Chaitanya Sai</h3><p>Role:Event Organiser</p><p>Roll No: 21JR5A4303</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-1/STUDENT%20COORDINATOR1.png' alt='Member 6'><h3>S. Akshay</h3><p>Role: Student Coordinator</p><p>Roll No: 21JR5A4306</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-1/TRESURER1.png' alt='Member 7'><h3>U. Asritha</h3><p>Role: Treasurer</p><p>Roll No: 20JR1A4310</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-1/CULTURALS1.png' alt='Member 8'><h3>T. Mini Rose</h3><p>Role: Cultural Coordinator</p><p>Roll No: 20JR1A4328</p></div>
+        </div>
+        
+        <div id="gen-2" class="generation">
+            <h2>Generation 2</h2>
+           
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/img/team/priyanka.jpg' alt='Member 2'><h3>B. Priyanka</h3><p>Role: President</p><p>Roll No: 21JR1A4310</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/img/team/poojasri.jpg' alt='Member 2'><h3>J. Pooja Sree</h3><p>Role: Secretary</p><p>Roll No: 21JR1A4333</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/img/team/kavya.jpg' alt='Member 2'><h3>V. Kavya</h3><p>Role: Media</p><p>Roll No: 21JR1A43F8</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-2/TECHNICAL3.png' alt='Member 2'><h3>Mani varma</h3><p>Role: Technical Head</p><p>Roll No: 21JR1A43C3</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/img/team/manikanta.jpg' alt='Member 2'><h3>K. Sai Manikanta</h3><p>Role: Technical Head</p><p>Roll No: 21JR1A43B4</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/img/team/navya.jpg' alt='Member 2'><h3>N. Navya Sri</h3><p>Role: Event Organiser</p><p>Roll No: 21JR1A4392</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/img/team/arun.jpg' alt='Member 2'><h3>D. Arun Kumar</h3><p>Role: Event Organiser</p><p>Roll No: 21JR1A4362</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/img/team/guptha.jpg' alt='Member 2'><h3>V. C. M. S Guptha</h3><p>Role: Student Coordinator</p><p>Roll No: 21JR1A43J5</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/img/team/vignu.jpg' alt='Member 2'><h3>G. Phani Vigna</h3><p>Role: Treasurer</p><p>Roll No: 21JR1A4343</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/img/team/charansai.jpg' alt='Member 2'><h3>R. Charan Sai</h3><p>Role: Treasure</p><p>Roll No: 21JR1A43H9</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/img/team/charan.jpg' alt='Member 2'><h3>G. Sri Charan Tej</h3><p>Role: Cultural Coordinator</p><p>Roll No: 21JR1A4363</p></div>
             
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-1/SECRETARY1.png" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>G. Lakshmi Sahitya </h4>
-                 <p>Secretary</p>
-                 <span>20JR1A4310</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-1/MEDIA1.png" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>K. Raju Mithra</h4>
-                 <p>Media</p>
-                 <span>20JR1A4346</span>
-               </div>
-             </div>
-            </div>
-
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-1/TECHNICAL1.png" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>D. Gangothr</h4>
-                 <p>Technical Head</p>
-                 <span>20J1A4306</span>
-               </div>
-             </div>
-            </div>
-
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-1/EVENT_ORGANIZER 1.png" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>U. Chandana </h4>
-                 <p>Event Organiser</p>
-                 <span>20JR1A4329</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-1/EVENT ORGANIZER1.png" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>K. Chaitanya Sai  </h4>
-                 <p>Event Organiser</p>
-                 <span>21JR5A4303</span>
-               </div>
-             </div>
-            </div>
-
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-1/STUDENT COORDINATOR1.png" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>S. Akshay</h4>
-                 <p>STUDENT COORDINATOR</p>
-                 <span>21JR5A4306</span>
-               </div>
-             </div>
-            </div>
-
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-1/TRESURER1.png" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>U. Asritha </h4>
-                 <p>Treasurer</p>
-                 <span>20JR1A4330</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-1/CULTURALS1.png" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>T. Mini Rose</h4>
-                 <p>CULTURAL COORDIANTOR</p>
-                 <span>20JR1A4328</span>
-               </div>
-             </div>
-            </div>
-    
-          </div>
         </div>
-
-        <div id="gen2" class="generation-data" style="display: none;">
-          <h3>2nd Generation Coordinators</h3>
-          <div class="row">
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up">
-              <div class="team-member">
-                <div class="circular-box">
-                  <img src="assets/img/team/priyanka.jpg" alt="">
-                </div>
-                <div class="member-info">
-                  <h4>B. Priyanka</h4>
-                  <p>President</p>
-                  <span>21JR1A4310</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/img/team/poojasri.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>J. Pooja Sree</h4>
-                 <p>Secretary</p>
-                 <span>21JR1A4333</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/img/team/kavya.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>V. Kavya</h4>
-                 <p>Media</p>
-                 <span>21JR1A43F8</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/img/team/lasya.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>K. C. Lasya</h4>
-                 <p>Technical Head</p>
-                 <span>21JR1A4380</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-2/TECHNICAL3.png" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>Mani varma</h4>
-                 <p>Technical Head</p>
-                 <span>21JR1A43C3</span>
-               </div>
-             </div>
-            </div>
-
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/img/team/manikanta.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>K. Sai Manikanta</h4>
-                 <p>Technical Head</p>
-                 <span>21JR1A43B4</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/img/team/navya.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>N. Navya Sri</h4>
-                 <p>Event Organiser</p>
-                 <span>21JR1A4392</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/img/team/arun.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>D. Arun Kumar</h4>
-                 <p>Event Organiser</p>
-                 <span>21JR1A4362</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/img/team/guptha.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4> V. C. M. S Guptha</h4>
-                 <p>Student Coordinator</p>
-                 <span>21JR1A43J5</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/img/team/vignu.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>G. Phani Vigna</h4>
-                 <p>Treasurer</p>
-                 <span>21JR1A43A3</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/img/team/charansai.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4> R. Charan Sai</h4>
-                 <p>Treasure</p>
-                 <span>21JR1A43H9</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/img/team/charan.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>G. Sri Charan Tej</h4>
-                 <p>Cultural Coordinator</p>
-                 <span>21JR1A4363</span>
-               </div>
-             </div>
-            </div>
-      
-          </div>
+        
+        <div id="gen-3" class="generation">
+            <h2>Generation 3</h2>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-3/PRESIDENT.jpg' alt='Member 7'><h3>D.Sameer</h3><p>Role: President</p><p>Roll No: 22JR1A4347</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-3/SECRETARY.jpg' alt='Member 8'><h3>A.Shanmukha Tejaswi</h3><p>Role: Secretary</p><p>Roll No: 22JR1A4308</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-3/MEDIA.jpg' alt='Member 9'><h3>D.John Dev Kumar</h3><p>Role: Media</p><p>Roll No: 22JR1A4232</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-3/TECHNICAL.jpg' alt='Member 10'><h3>P.N.Chandra Sekhar</h3><p>Role: Technical Head</p><p>Roll No: 22JR1A43C9</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-3/TECHNICAL_.jpg' alt='Member 11'><h3>Ch. Roshan Subhash</h3><p>Role: Technical Head</p><p>Roll No: 22JR1A4345</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-3/Technicall.jpg' alt='Member 12'><h3>T.Hema</h3><p>Role: Technical Head</p><p>Roll No: 22JR1A3E8</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-3/EVENT%20ORGANISER.jpg' alt='Member 13'><h3>M.Bhanuja Chowdary</h3><p>Role:  Event organiser</p><p>Roll No: 22JR1A4381</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-3/EVENT_ORGANISER.jpg' alt='Member 17'><h3>P.Akshaya</h3><p>Role: Event Organiser</p><p>Roll No: 22JR1A4391</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-3/STUDENT%20COORDINATER.jpg' alt='Member 14'><h3>A.Sravana Siva Kumar</h3><p>Role: Student coordinator</p><p>Roll No: 22JR1A4332</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-3/STUDENT_COORDINATEER.jpg' alt='Member 15'><h3>K.V.N.Sruthi</h3><p>Role: Student coordinator</p><p>Roll No: 22JR1A4370</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-3/TRESURER.jpg' alt='Member 16'><h3>A.Padmavathi</h3><p>Role: Tresureer</p><p>Roll No: 22JR1A4304</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-3/tresurer1.jpg' alt='Member 17'><h3>P.Pradeep</h3><p>Role: Tresurer</p><p>Roll No: 22JR1A43D0</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-3/CULTURAL.jpg' alt='Member 18'><h3>K.Gayathri</h3><p>Role: Cultural coordinator</p><p>Roll No: 22JR1A4368</p></div>
         </div>
-
-        <div id="gen3" class="generation-data" style="display: none;">
-          <h3>3rd Generation Coordinators</h3>
-          <div class="row">
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up">
-              <div class="team-member">
-                <div class="circular-box">
-                  <img src="assets/GEN-3/PRESIDENT.jpg" alt="">
-                </div>
-                <div class="member-info">
-                  <h4>D. Sameer</h4>
-                  <p>President</p>
-                  <span>22JR1A4347</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-3/SECRETARY.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>A. Shanmukha Tejaswi</h4>
-                 <p>Secretary</p>
-                 <span>22JR1A4308</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-3/MEDIA.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>D. John Dev Kumar</h4>
-                 <p>Media</p>
-                 <span>22JR1A4232</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-3/TECHNICAL.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>P. N. Chandra Sekhar </h4>
-                 <p>Technical Head</p>
-                 <span>22JR1A43C9</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-3/TECHNICAL_.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>Ch. Rohan Subash </h4>
-                 <p>Technical Head</p>
-                 <span>22JR1A4345</span>
-               </div>
-             </div>
-            </div>
-
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-3/Technicall.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>T. Hema </h4>
-                 <p>Technical Head</p>
-                 <span>22JR1A43E8</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-3/EVENT ORGANISER.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>M. Bhanuja Chowdary</h4>
-                 <p>Event Organiser</p>
-                 <span>22JR1A4381</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-3/EVENT_ORGANISER.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>P. Akshaya</h4>
-                 <p>Event Organiser</p>
-                 <span>22JR1A4391</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-3/STUDENT COORDINATER.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>A. Sravana Siva Kumar</h4>
-                 <p>Student Coordinator</p>
-                 <span>22JR1A4332</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-3/STUDENT_COORDINATEER.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>K. V. N. Sruthi</h4>
-                 <p>Student Coordinator</p>
-                 <span>22JR1A4370</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-3/TRESURER.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>A. Padmavathi</h4>
-                 <p>Tresurer</p>
-                 <span>22JR1A4304</span>
-               </div>
-             </div>
-            </div>
-
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-3/tresurer1.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>P. Pradeep</h4>
-                 <p>Tresurer</p>
-                 <span>22JR1A43D0</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-3/CULTURAL.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>K. Gayathri</h4>
-                 <p>Cultural Coordinator</p>
-                 <span>22JR1A4368</span>
-               </div>
-             </div>
-            </div>
-      
-          </div>
+        
+        <div id="gen-4" class="generation">
+            <h2>Generation 4</h2>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/PRESIDENT.jpg' alt='Member 10'><h3>J. Mohit Krishna</h3><p>Role: President</p><p>Roll No: 23JR1A4001</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/sec.jpg' alt='Member 11'><h3>M. Harika</h3><p>Role: Secretary</p><p>Roll No: 23JR1A4002</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/MEDIA____.jpg' alt='Member 13'><h3>T. Ravi Teja</h3><p>Role: Media</p><p>Roll No: 23JR1A4003</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/MEDIA.jpg' alt='Member 14'><h3>G.Gayathri</h3><p>Role: Media</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/MEDIA___.jpg' alt='Member 15'><h3>M.Bharadwaj</h3><p>Role: Media</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/siri.jpg' alt='Member 16'><h3>Y. Sireesha</h3><p>Role: Media</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/TECHNICAL_.jpg' alt='Member 17'><h3>N. Ram Manikanta</h3><p>Role: Technical head</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/TECHNICAL__.jpg' alt='Member 18'><h3>B. Lakshmi Harshini</h3><p>Role: Technical head</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/TECHNICAL1.jpg' alt='Member 19'><h3>J. Keerthi</h3><p>Role: Technical head</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/EVENT%20ORGANISER.jpg' alt='Member 20'><h3>N. Naga Tejaswini</h3><p>Role: Event organiser</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/EVENT_ORGANISER.jpg' alt='Member 21'><h3>K. Harshith Krishna</h3><p>Role: Event organiser</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/STUDENT%20COORDINATOR.jpg' alt='Member 21'><h3>P. Ganash</h3><p>Role: Student coordinator</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/STUDENT_COORDINATOR.jpg' alt='Member 21'><h3>P. Lakshmi Sowmya</h3><p>Role: Student coordinator</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/kosali.jpg' alt='Member 21'><h3>Durga Kosali</h3><p>Role: Tresurer</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/TRESURER__.jpg' alt='Member 21'><h3>T. Pavan Kumar</h3><p>Role: Tresurer</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/CULTURAL.jpg' alt='Member 21'><h3>V. Sarika</h3><p>Role: Cultural coordinator</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/CULTURAL_.jpg' alt='Member 21'><h3>D. Subhadra Sri Hasini</h3><p>Role: Cultural coordinator</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/meenal.jpg' alt='Member 21'><h3>M. Meenal</h3><p>Role: Anchor</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/ANCHOR__.jpg' alt='Member 21'><h3>MD. Adil Shariff</h3><p>Role: Anchor</p><p>Roll No: 23JR1A43J1</p></div>
+            <div class='profile-card'><img src='https://elite25.netlify.app/assets/GEN-4/ANCHOR___.jpg' alt='Member 21'><h3>M. Himaja Sri</h3><p>Role: Anchor</p><p>Roll No: 23JR1A43J1</p></div>
         </div>
-
-        <div id="gen4" class="generation-data" style="display: none;">
-          <h3>4th Generation Coordinators</h3>
-          <div class="row">
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/PRESIDENT.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>J. Mohit Krishna</h4>
-                 <p>President</p>
-                 <span>23JR1A4249</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/sec.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>M. Harika</h4>
-                 <p>Secretary</p>
-                 <span>23JR1A4387</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/MEDIA____.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>T. Ravi Teja</h4>
-                 <p>Media</p>
-                 <span>23JR1A43J1</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/MEDIA.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>G.Gayathri</h4>
-                 <p>Media</p>
-                 <span>23JR1A4209</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/MEDIA___.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>M.Bharadwaj</h4>
-                 <p>Media</p>
-                 <span>23JR1A43A9</span>
-               </div>
-             </div>
-            </div> 
-
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/siri.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>Y. Sireesha</h4>
-                 <p>Media</p>
-                 <span>23JR1A4238</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/TECHNICAL_.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>N. Ram Manikanta</h4>
-                 <p>Technical Head</p>
-                 <span>23JR1A43B7</span>
-               </div>
-             </div>
-            </div>
-      
-              <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                <div class="team-member">
-                  <div class="circular-box">
-                  <img src="assets/GEN-4/TECHNICAL__.jpg" alt="">
-                  </div>
-                  <div class="member-info">
-                  <h4>B. Lakshmi Harshini</h4>
-                  <p>Technical Head</p>
-                  <span>23JR1A4202</span>
-                </div>
-              </div>
-              </div>
-      
-              <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                <div class="team-member">
-                  <div class="circular-box">
-                   <img src="assets/GEN-4/TECHNICAL1.jpg" alt="">
-                  </div>
-                  <div class="member-info">
-                   <h4>J. Keerthi</h4>
-                   <p>Technical Head</p>
-                   <span>23JR1A4337</span>
-                 </div>
-               </div>
-              </div>
-
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/EVENT ORGANISER.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>N. Naga Tejaswini</h4>
-                 <p>Event Organiser</p>
-                 <span>23JR1A4221</span>
-               </div>
-             </div>
-            </div>
-
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/EVENT_ORGANISER.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>K. Harshith Krishna</h4>
-                 <p>Event Organiser</p>
-                 <span>23JR1A4362</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/STUDENT COORDINATOR.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>P. Ganash</h4>
-                 <p>Student Co-ordinator</p>
-                 <span>23JR1A43B9</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/STUDENT_COORDINATOR.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>P. Lakshmi Sowmya</h4>
-                 <p>Student Co-ordinator</p>
-                 <span>23JR1A43A0</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/kosali.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>Durga Kosali</h4>
-                 <p>Tresurer</p>
-                 <span>24JR1A4307</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/TRESURER__.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>T. Pavan Kumar</h4>
-                 <p>Tresurer</p>
-                 <span>23JR1A4317</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/CULTURAL.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>V. Sarika</h4>
-                 <p>Cultural Co-ordinator</p>
-                 <span>23JR1A43G4</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/CULTURAL_.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>D. Subhadra Sri Hasini</h4>
-                 <p>Cultural Co-ordinator</p>
-                 <span>23JR1A4322</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/meenal.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>M. Meenal</h4>
-                 <p>Anchor</p>
-                 <span>23JR1A4390</span>
-               </div>
-             </div>
-            </div>
-
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/ANCHOR__.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>MD. Adil Shariff</h4>
-                 <p>Anchor</p>
-                 <span>23JR1A43B2</span>
-               </div>
-             </div>
-            </div>
-      
-            <div class="col-md-2 col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member">
-                <div class="circular-box">
-                 <img src="assets/GEN-4/ANCHOR___.jpg" alt="">
-                </div>
-                <div class="member-info">
-                 <h4>M. Himaja Sri</h4>
-                 <p>Anchor</p>
-                 <span>23JR1A4396</span>
-               </div>
-             </div>
-            </div>
-      
-       
-      
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main><!-- End team members section -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href='/'>Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href='/about'>About Us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href='/members'>Members</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href='/events'>Events</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href='/achievements'>Achievements</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href='/team'>Faculty</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href='/projects'>Projects</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href='/contact'>Contact us</a></li>
-            </ul>
-          </div>
-
-    
-
-          <div class="col-lg-4 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-              ELITE (Enhanced Learning and Innovative Talent Expo)<br>
-              Department of Artificial Intelligence<br>
-              <strong>Phone: </strong>0863 - 2333399<br>
-              <strong>Email: </strong><span><a href="mailto:kitselite@gmail.com">kitselite@gmail.com</a></span><br>
-            </p>
-
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-info">
-            <h3>About ELITE</h3>
-            <p>
-              The ELITE association in which the <b>ELITE</b> stands for <b>Enhanced Learning and Innovative Talent Expo.</b><br> It is an association formed in our campus which primarily focuses on the enhanced learning of the technology and also hub for the innovative talents,
-              in technology, co-curricular and extra-curricular activities. <br> <br>
-            </p>
-            <div class="social-links mt-3">
-              <a href="https://www.instagram.com/kits_cai?igsh=NDQ5cHRvdjBmZndv" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/cse-ai-aiml-kits-2a4234326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+    
+      <a href="#top" class="scroll-top-btn">↑</a>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>KITS ELITE</span></strong>. All Rights Reserved
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/js/main.js"></script>
-
+    </body>
 </body>
-
 </html>
+
