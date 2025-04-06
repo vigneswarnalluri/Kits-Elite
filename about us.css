@@ -3,16 +3,16 @@
 --------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap");
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #444;
+  font-family: "Akaya Kanadaka", sans-serif;
+  color: #02232c;
 }
 
 a {
-  color: #f6cf43;
+  color: #35b8c4;
 }
 
 a:hover {
-  color: #846204;
+  color: #426adf;
   text-decoration: none;
 }
 
@@ -23,10 +23,10 @@ h4,
 h5,
 h6,
 .font-primary {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/*--------------------------------------------------------------
+  /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
 .back-to-top {
@@ -52,9 +52,10 @@ h6,
 
 .back-to-top:hover {
   color: #fff;
-  background: #f6cf43;
+  background: #2a261d;
   transition: background 0.2s ease-in-out;
 }
+
 
 /*--------------------------------------------------------------
 # Header
@@ -73,7 +74,7 @@ h6,
 }
 
 #header.header-scrolled {
-  background: rgba(227, 231, 233, 0.8);
+  background: rgba(158, 228, 249, 0.8);
   height: 60px;
   padding: 10px 0;
 }
@@ -134,7 +135,7 @@ h6,
 .nav-menu a:hover,
 .nav-menu .active > a,
 .nav-menu li:hover > a {
-  color: #a47546;
+  color: #bca2f4;
   text-decoration: none;
 }
 
@@ -168,7 +169,7 @@ h6,
   font-size: 14px;
   font-weight: 500;
   text-transform: none;
-  color: #846204;
+  color: #046684;
 }
 
 .nav-menu .drop-down ul a:hover,
@@ -200,7 +201,7 @@ h6,
 
 .nav-menu .drop-down .drop-down > a:after {
   content: "\eaa0";
-  font-family: Orbitron;
+  font-family: IcoFont;
   position: absolute;
   right: 15px;
 }
@@ -556,7 +557,7 @@ section {
 .breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
-  color: #6c757d;
+  color: #4797dc;
   content: "/";
 }
 
@@ -623,7 +624,7 @@ section {
 }
 
 .services .icon-box-pink .icon {
-  background: #fceef3;
+  background: #f8b1ca;
 }
 
 .services .icon-box-pink .icon i {
@@ -658,8 +659,8 @@ section {
   border-color: #41cf2e;
 }
 
-.services .icon-box-blue .icon {
-  background: #aaaa7b;
+.services .icon-box-pink .icon {
+  background: #9d6377;
 }
 
 .services .icon-box-blue .icon i {
@@ -684,7 +685,7 @@ section {
   position: relative;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  color: var(--secondary-brown);
+  color: rgb(3, 72, 70);
 }
 
 .section-title h2::after {
@@ -848,8 +849,8 @@ section {
 # Why Us
 --------------------------------------------------------------*/
 .why-us .container {
-  box-shadow: 0 5px 25px 0 rgba(214, 215, 216, 0.6);
-  background: #fff;
+  box-shadow: 50px 5px 25px 0 rgba(103, 170, 180, 0.6);
+  background: #c5eaf4;
 }
 
 .why-us .icon-box + .icon-box {
@@ -1447,17 +1448,22 @@ section {
 }
 
 .features1 .img-fluid {
-  border-radius: 15px;
-  box-shadow: 0 12px 35px rgba(228, 151, 35, 0.12);
+  border-radius: 40px;
+  box-shadow: 0 12px 35px rgba(61, 17, 217, 0.12);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   max-width: 100%;
-  height: auto;
-  border: 3px solid rgba(255, 255, 255, 0.8);
+  height: fit-content;
+  border: 3px solid rgba(17, 1, 1, 0.8);
+  align-items: center;
 }
 
 .features1 .img-fluid:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 18px 45px rgba(228, 151, 35, 0.18);
+  box-shadow: 10 18px 45px rgba(57, 139, 227, 0.18);
+}
+
+.ai{
+  border-radius: 50px;
 }
 
 .features1:nth-child(even) {
@@ -2653,4 +2659,8 @@ section {
 
 #footer .credits a {
   color: #f6cf43;
+}
+
+.col-lg-4 col-md-6 footer-contact{
+  color: white;
 }
